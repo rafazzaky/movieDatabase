@@ -9,7 +9,7 @@ $('.search-button').on('click', function(){
                 cards += showCards(m);
             });
             $('.movie-container').html(cards);
-    
+            $('.search-result').html(searchResult($('.input-keyword').val()));
             //Ketika tombol detail diklik
             $('.modal-detail-button').on('click', function(){
                 $.ajax({
@@ -61,5 +61,11 @@ function showMovieDetail(m){
                         </ul>
                     </div>
                 </div>
+            </div>`;
+}
+
+function searchResult(keyword){
+    return `<div class="col">
+                <p><i>showing result for <mark style="background-color: yellow;"><b>"${keyword}"</b></mark></i></p>
             </div>`;
 }
